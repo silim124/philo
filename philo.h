@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/11/30 18:02:50 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/19 16:19:03 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # define DIED 0
 # define SLEEP 1
 # define EAT 2
-# define THINK 2
+# define THINK 3
 # define PUT_FORK 3
 
 # define INPUT_COUNT 1
-# define NEGATIVE_INPUT 2
+# define INVALID_INPUT 2
 # define MAL_ERR 3
 # define INTERNAL_ERR 4
 
