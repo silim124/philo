@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 16:19:03 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/19 17:05:36 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_game
 	pthread_mutex_t	*m_fork;
 	pthread_mutex_t	m_eating;
 	pthread_mutex_t	m_print;
+	pthread_mutex_t	m_check_death;
 	struct s_philo	*philo;
 }	t_game;
 

@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:14 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 00:47:03 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/19 17:07:04 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	init_mutex(t_game *game)
 	int	i;
 
 	if (pthread_mutex_init(&(game->m_print), NULL)
-		|| pthread_mutex_init(&(game->m_eating), NULL))
+		|| pthread_mutex_init(&(game->m_eating), NULL)
+		|| pthread_mutex_init(&(game->m_check_death), NULL))
 		return (0);
 	game->m_fork = malloc(sizeof(pthread_mutex_t) * game->philo_num);
 	if (!(game->m_fork))
