@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 17:07:16 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/19 17:31:54 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_death(t_game *game, t_philo *philo)
 {
 	int	i;
 
-	while (1)
+	while (!game->eat_all)
 	{
 		i = 0;
 		while (i < game->philo_num)
@@ -31,6 +31,15 @@ void	check_death(t_game *game, t_philo *philo)
 			}
 			usleep(100);
 			i++;
+		}
+		i = -1;
+		while (philo->eat_num >= game->must_eat_num)
+		{
+			if (++i == game->philo_num)
+			{
+				game->eat_all = TRUE;
+				return ;
+			}
 		}
 	}
 }
