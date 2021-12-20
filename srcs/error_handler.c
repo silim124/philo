@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:19 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:32:15 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:33:48 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	ft_putstr_fd(char *s, int fd)
 
 int	put_error(int error_code)
 {
-	if (error_code == INPUT_ERROR)
+	if (error_code == INPUT_ERR)
 		ft_putstr_fd("should not put any negative \
 			or zero input\n", STDERR_FILENO);
 	else if (error_code == MAL_ERR)

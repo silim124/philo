@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:31:55 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:33:29 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int			init_mutex(t_game *game);
 int			start_game(t_game *game, t_philo *philo);
 void		end_game(t_game *game, t_philo *philo);
 void		check_death(t_game *game, t_philo *philo);
-void		check_eat_all(t_game *game, t_philo *philo);
 
 /*
 ** execute.c
