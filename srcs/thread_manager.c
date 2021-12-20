@@ -6,11 +6,26 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 19:17:00 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:31:10 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+static void	check_eat_all(t_game *game, t_philo *philo)
+{
+	int	i;
+
+	i = -1;
+	while (game->must_eat_num && philo[++i].eat_num >= game->must_eat_num)
+	{
+		if (i == game->philo_num - 1)
+		{
+			game->eat_all = TRUE;
+			return ;
+		}
+	}
+}
 
 void	check_death(t_game *game, t_philo *philo)
 {
@@ -32,15 +47,7 @@ void	check_death(t_game *game, t_philo *philo)
 			usleep(100);
 			i++;
 		}
-		i = -1;
-		while (game->must_eat_num && philo[++i].eat_num >= game->must_eat_num)
-		{
-			if (i == game->philo_num - 1)
-			{
-				game->eat_all = TRUE;
-				return ;
-			}
-		}
+		check_eat_all(game, philo);
 	}
 }
 
@@ -69,11 +76,12 @@ int	start_game(t_game *game, t_philo *philo)
 	while (i < game->philo_num)
 	{
 		philo[i].last_eat_time = current_time();
-		if (pthread_create(&(philo[i].thread), NULL, execute, (void *)&(philo[i])))
-			return (INTERNAL_ERR);
+		if (pthread_create(&(philo[i].thread), NULL, \
+			execute, (void *)&(philo[i])))
+			return (0);
 		i++;
 	}
 	check_death(game, philo);
 	end_game(game, philo);
-	return (0);
+	return (1);
 }

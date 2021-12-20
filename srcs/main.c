@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:23:11 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 16:19:56 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:30:29 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,29 @@ static int	is_positive_num(char *s)
 	return (1);
 }
 
-static int	is_invalid_input(int input_num, char **input)
+static int	is_valid_input(int input_num, char **input)
 {
 	int	i;
+
 	if (input_num != 5 && input_num != 6)
-		return (INPUT_COUNT);
+		return (0);
 	i = 0;
 	while (++i < input_num && input[i])
 		if (!is_positive_num(input[i]))
-			return (INVALID_INPUT);
-	return (0);
+			return (0);
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
-	int	error_code;
+	int		error_code;
 	t_game	game;
 
-	if ((error_code = is_invalid_input(argc, argv))
-		|| (error_code = init_game(&game, argc, argv))
-		|| (error_code = start_game(&game, game.philo)))
-		return (put_error(error_code));
+	if (!is_valid_input(argc, argv))
+		return (put_error(INVALID_INPUT_ERR));
+	if (!init_game(&game, argc, argv))
+		return (put_error(MAL_ERR));
+	if (!start_game(&game, game.philo))
+		return (put_error(INTERNAL_ERR));
 	return (0);
 }

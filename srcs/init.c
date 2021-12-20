@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:14 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 17:21:14 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:30:57 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	init_philo(t_game *game)
 	return (1);
 }
 
-int	init_game(t_game *game, int	input_num, char **input)
+int	init_game(t_game *game, int input_num, char **input)
 {
 	game->philo_num = ft_atoi(input[1]);
 	game->die_time = ft_atoi(input[2]);
@@ -68,6 +68,6 @@ int	init_game(t_game *game, int	input_num, char **input)
 		game->must_eat_num = ft_atoi(input[5]);
 	if (!init_mutex(game)
 		|| !init_philo(game))
-		return (MAL_ERR);
-	return (0);
+		return (0);
+	return (1);
 }

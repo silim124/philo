@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 19:17:16 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:18:19 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	spend_time(t_game *game, int status)
 	while (game->is_died == 0)
 	{
 		if (diff_time(current_time(), start_time) >= limit_time)
-			break;
+			break ;
 		usleep(100);
 	}
 }

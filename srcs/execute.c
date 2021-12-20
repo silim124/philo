@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2021/12/19 17:32:13 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:17:06 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	prepare_eat(t_game *game, t_philo *philo)
 void	*execute(void *void_philo)
 {
 	t_philo	*philo;
-	t_game *game;
+	t_game	*game;
 
 	philo = (t_philo *)void_philo;
 	game = philo->game;
@@ -48,7 +48,7 @@ void	*execute(void *void_philo)
 	while (game->is_died == 0)
 	{
 		if (!prepare_eat(game, philo))
-			break;
+			break ;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
 		put_philo(game, "is thinking", philo->id);
