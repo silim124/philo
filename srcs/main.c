@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:23:11 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:30:29 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:31:50 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (!is_valid_input(argc, argv))
-		return (put_error(INVALID_INPUT_ERR));
+		return (put_error(INPUT_ERR));
 	if (!init_game(&game, argc, argv))
 		return (put_error(MAL_ERR));
 	if (!start_game(&game, game.philo))

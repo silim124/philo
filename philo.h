@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:29:31 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/20 10:31:55 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define THINK 3
 # define PUT_FORK 3
 
-# define INVALID_INPUT_ERR 1
+# define INPUT_ERR 1
 # define MAL_ERR 2
 # define INTERNAL_ERR 3
 
