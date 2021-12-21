@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:17:06 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 18:30:51 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	eat(t_game *game, t_philo *philo)
 	put_philo(game, "is eating", philo->id);
 	philo->last_eat_time = current_time();
 	pthread_mutex_unlock(&(game->m_eating));
-	philo->eat_num += 1;
 	spend_time(game, EAT);
+	philo->eat_num += 1;
 }
 
 int	prepare_eat(t_game *game, t_philo *philo)
