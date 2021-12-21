@@ -6,11 +6,21 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 00:17:43 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 00:49:03 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
+
+static void	put_dead(t_game *game, int philo_id)
+{
+	pthread_mutex_lock(&(game->m_print));
+	printf("%lld", current_time() - game->start_time);
+	printf(" %d ", philo_id + 1);
+	printf("died\n");
+	pthread_mutex_unlock(&(game->m_print));
+}
+
 
 static void	check_eat_all(t_game *game, t_philo *philo)
 {
@@ -39,7 +49,7 @@ void	check_death(t_game *game, t_philo *philo)
 			if (current_time() - philo[i].last_eat_time > game->die_time)
 			{
 				pthread_mutex_lock(&game->m_check_death);
-				put_philo(game, "died", i);
+				put_dead(game, i);
 				game->is_died = TRUE;
 				pthread_mutex_unlock(&game->m_check_death);
 				return ;

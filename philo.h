@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:33:29 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 00:36:44 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ typedef struct s_game
 	int				is_died;
 	int				philo_num;
 	int				must_eat_num;
-	unsigned long	die_time;
-	unsigned long	eat_time;
-	unsigned long	sleep_time;
+	long long		die_time;
+	long long		eat_time;
+	long long		sleep_time;
 	long long		start_time;
 	pthread_mutex_t	*m_fork;
 	pthread_mutex_t	m_eating;
@@ -55,7 +55,7 @@ typedef struct s_philo
 	int				left_fork_id;
 	int				right_fork_id;
 	int				eat_num;
-	unsigned long	last_eat_time;
+	long long		last_eat_time;
 	pthread_t		thread;
 	t_game			*game;
 }	t_philo;
