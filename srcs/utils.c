@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 19:20:27 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:32:42 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	ft_atoi(const char *str)
 		str++;
 		i++;
 	}
-	if (result < -2147483648 || result > 2147483647)
-		return (-sign);
+	if (result <= 0 || result > 2147483647)
+		return (0);
 	return (sign * result);
 }
 

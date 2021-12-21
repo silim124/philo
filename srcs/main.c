@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:23:11 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 19:20:03 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:33:28 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ static int	is_valid_input(int input_num, char **input)
 		return (0);
 	i = 0;
 	while (++i < input_num && input[i])
-		if (!is_positive_num(input[i]))
+		if (!is_positive_num(input[i]) || !(ft_atoi(input[i])))
 			return (0);
+
 	return (1);
 }
 
