@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 20:53:54 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 20:57:45 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	check_death(t_game *game, t_philo *philo)
 			if (current_time() - philo[i].last_eat_time > game->die_time)
 			{
 				pthread_mutex_lock(&game->m_check_death);
-				put_philo(game, "died", i);
 				game->is_died = TRUE;
+				put_philo(game, "died", i);
 				pthread_mutex_unlock(&game->m_check_death);
 				return ;
 			}
-			usleep(60);
+			usleep(100);
 			i++;
 		}
 		check_eat_all(game, philo);
