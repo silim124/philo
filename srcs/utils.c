@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 20:33:01 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 20:37:07 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	put_philo(t_game *game, char *str, int philo_id)
 		printf("%lld", current_time() - game->start_time);
 		printf(" %d ", philo_id + 1);
 		printf("%s\n", str);
+		usleep(10);
 	}
 	pthread_mutex_unlock(&(game->m_print));
 }
