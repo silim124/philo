@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:19 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 02:07:42 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 02:07:58 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	ft_putstr_fd(char *s, int fd)
 int	put_error(int error_code)
 {
 	if (error_code == INPUT_ERR)
-		ft_putstr_fd("should not any invalid inputn", STDERR_FILENO);
+		ft_putstr_fd("should not any invalid input\n", STDERR_FILENO);
 	else if (error_code == MAL_ERR)
 		ft_putstr_fd("malloc error\n", STDERR_FILENO);
 	else if (error_code == INTERNAL_ERR)
