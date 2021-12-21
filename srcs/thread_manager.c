@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 18:28:55 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:09 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 static void	check_eat_all(t_game *game, t_philo *philo)
 {

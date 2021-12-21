@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 18:30:51 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:18 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 void	eat(t_game *game, t_philo *philo)
 {
@@ -48,7 +48,7 @@ void	*execute(void *void_philo)
 	while (game->is_died == 0)
 	{
 		if (!prepare_eat(game, philo))
-			break ;
+			break;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
 		put_philo(game, "is thinking", philo->id);

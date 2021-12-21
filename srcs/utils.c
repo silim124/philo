@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 11:09:30 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:27 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 int	ft_atoi(const char *str)
 {
@@ -67,7 +67,7 @@ void	spend_time(t_game *game, int status)
 	{
 		if (diff_time(current_time(), start_time) >= limit_time)
 			break ;
-		usleep(100);
+		usleep(50);
 	}
 }
 

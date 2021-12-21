@@ -6,7 +6,7 @@
 #    By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 18:45:01 by silim             #+#    #+#              #
-#    Updated: 2021/10/31 14:16:45 by silim            ###   ########.fr        #
+#    Updated: 2021/12/21 19:19:44 by silim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,19 +21,19 @@ SRCS	=	srcs/main.c\
 			srcs/execute.c\
 			srcs/thread_manager.c\
 
-OBJ	=	$(SRCS: .c=.o)
+OBJS	= $(SRCS:.c=.o)
 
 all	:	$(NAME)
 
-$(NAME)	:	$(OBJ)
-			gcc $(FLAGS) -I. -o $(NAME) $(OBJ)
+$(NAME)	:	$(OBJS)
+			gcc $(FLAGS) -I. -o $(NAME) $(OBJS)
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re	:	fclean all
 
-.PHONY	:	all clean fclean re
+.PHONY:	clean fclean re

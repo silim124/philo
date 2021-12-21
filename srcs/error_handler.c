@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:19 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:33:48 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:23 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 static int	ft_strlen(const char *s)
 {

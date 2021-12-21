@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:14 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:30:57 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:15 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 int	init_mutex(t_game *game)
 {

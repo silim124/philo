@@ -6,11 +6,11 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:23:11 by silim             #+#    #+#             */
-/*   Updated: 2021/12/20 10:32:54 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 19:20:03 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 static int	is_positive_num(char *s)
 {
