@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:19 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 01:19:28 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 02:04:40 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	put_error(int error_code)
 {
 	if (error_code == INPUT_ERR)
 		ft_putstr_fd("should not put any negative" \
-		" or zero input\n", STDERR_FILENO);
+		" or zero or too big input\n", STDERR_FILENO);
 	else if (error_code == MAL_ERR)
 		ft_putstr_fd("malloc error\n", STDERR_FILENO);
 	else if (error_code == INTERNAL_ERR)
