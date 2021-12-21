@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 20:57:24 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 20:59:03 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	put_philo(t_game *game, char *str, int philo_id)
 	}
 	else if (game->is_died == TRUE)
 	{
-		usleep(0);
+		usleep(1);
 		printf("%lld", current_time() - game->start_time);
 		printf(" %d ", philo_id + 1);
 		printf("%s\n", str);
