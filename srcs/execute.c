@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 23:39:05 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 01:42:03 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	*execute(void *void_philo)
 	while (game->is_died == 0)
 	{
 		if (!prepare_eat(game, philo))
-			break;
+			break ;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
 		put_philo(game, "is thinking", philo->id);

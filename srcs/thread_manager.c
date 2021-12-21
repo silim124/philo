@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 00:49:03 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/22 01:42:42 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void	put_dead(t_game *game, int philo_id)
 	printf("died\n");
 	pthread_mutex_unlock(&(game->m_print));
 }
-
 
 static void	check_eat_all(t_game *game, t_philo *philo)
 {
