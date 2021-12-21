@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 20:58:50 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 23:33:46 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	check_death(t_game *game, t_philo *philo)
 			if (current_time() - philo[i].last_eat_time > game->die_time)
 			{
 				pthread_mutex_lock(&game->m_check_death);
-				game->is_died = TRUE;
 				put_philo(game, "died", i);
+				game->is_died = TRUE;
 				pthread_mutex_unlock(&game->m_check_death);
 				return ;
 			}
@@ -56,17 +56,16 @@ void	end_game(t_game *game, t_philo *philo)
 	int	i;
 
 	i = 0;
-	if (game->philo_num == 1)
-		pthread_mutex_unlock(&(game->m_fork[0]));
 	while (i < game->philo_num)
 	{
+		pthread_mutex_unlock(&(game->m_fork[i]));
 		pthread_join(philo[i].thread, NULL);
 		pthread_mutex_destroy(&(game->m_fork[i++]));
 	}
-	free(game->philo);
-	free(game->m_fork);
 	pthread_mutex_destroy(&(game->m_eating));
 	pthread_mutex_destroy(&(game->m_print));
+	free(game->philo);
+	free(game->m_fork);
 }
 
 int	start_game(t_game *game, t_philo *philo)
