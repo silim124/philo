@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/21 18:24:06 by silim            ###   ########.fr       */
+/*   Updated: 2021/12/21 18:27:11 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ int	start_game(t_game *game, t_philo *philo)
 	game->start_time = current_time();
 	while (i < game->philo_num)
 	{
+		philo[i].last_eat_time = current_time();
 		if (pthread_create(&(philo[i].thread), NULL, \
 			execute, (void *)&(philo[i])))
 			return (0);
-		philo[i].last_eat_time = current_time();
 		i++;
 	}
 	check_death(game, philo);
