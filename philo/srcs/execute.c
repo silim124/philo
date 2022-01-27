@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 10:46:48 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 11:14:34 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	eat(t_game *game, t_philo *philo)
 
 int	prepare_eat(t_game *game, t_philo *philo)
 {
+	if (game->eat_all)
+		return (0);
 	pthread_mutex_lock(&(game->m_fork[philo->left_fork_id]));
 	put_philo(game, "has taken a fork", philo->id);
 	pthread_mutex_lock(&(game->m_fork[philo->right_fork_id]));
@@ -31,8 +33,6 @@ int	prepare_eat(t_game *game, t_philo *philo)
 	eat(game, philo);
 	pthread_mutex_unlock(&(game->m_fork[philo->left_fork_id]));
 	pthread_mutex_unlock(&(game->m_fork[philo->right_fork_id]));
-	if (game->eat_all)
-		return (0);
 	return (1);
 }
 
@@ -45,7 +45,7 @@ void	*execute(void *void_philo)
 	game = philo->game;
 	if (philo->id % 2)
 		usleep(15000);
-	while (game->is_died == 0)
+	while (game->is_died == FALSE)
 	{
 		if (!prepare_eat(game, philo))
 			break ;

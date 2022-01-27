@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 10:45:55 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 11:21:42 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,6 @@ static void	put_dead(t_game *game, int philo_id)
 	pthread_mutex_unlock(&(game->m_print));
 }
 
-static void	check_eat_all(t_game *game, t_philo *philo)
-{
-	int	i;
-
-	i = -1;
-	while (game->must_eat_num && philo[++i].eat_num >= game->must_eat_num)
-	{
-		if (i == game->philo_num - 1)
-		{
-			game->eat_all = TRUE;
-			return ;
-		}
-	}
-}
-
 void	check_death(t_game *game, t_philo *philo)
 {
 	int	i;
@@ -45,6 +30,11 @@ void	check_death(t_game *game, t_philo *philo)
 		i = 0;
 		while (i < game->philo_num)
 		{
+			if (philo[i].eat_num == game->must_eat_num)
+			{
+				game->eat_all = TRUE;
+				return ;
+			}
 			if (current_time() - philo[i].last_eat_time > game->die_time)
 			{
 				pthread_mutex_lock(&game->m_check_death);
@@ -56,7 +46,6 @@ void	check_death(t_game *game, t_philo *philo)
 			usleep(1000);
 			i++;
 		}
-		check_eat_all(game, philo);
 	}
 }
 
@@ -85,10 +74,10 @@ int	start_game(t_game *game, t_philo *philo)
 	game->start_time = current_time();
 	while (i < game->philo_num)
 	{
-		philo[i].last_eat_time = current_time();
 		if (pthread_create(&(philo[i].thread), NULL, \
 			execute, (void *)&(philo[i])))
 			return (0);
+		philo[i].last_eat_time = current_time();
 		i++;
 	}
 	check_death(game, philo);
