@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 11:48:14 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 11:50:12 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	put_dead(t_game *game, int philo_id)
 void	check_death(t_game *game, t_philo *philo)
 {
 	int	i;
-	int j;
+	int	j;
 
 	j = 0;
 	while (!game->eat_all)
