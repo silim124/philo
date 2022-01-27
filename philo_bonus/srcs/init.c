@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 01:23:14 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 04:17:07 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 12:34:30 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	init_game(t_game *game, int input_num, char **input)
 	game->is_died = FALSE;
 	if (input_num == 6)
 		game->must_eat_num = ft_atoi(input[5]);
-	else
-		game->must_eat_num = -1;
 	if (game->must_eat_num == 1)
 		game->must_eat_num++;
 	if (!init_semaphore(game))

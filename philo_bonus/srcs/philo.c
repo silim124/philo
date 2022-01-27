@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 04:17:18 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 12:40:27 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*check_death(void *void_philo)
 		if (g->is_died)
 			break ;
 		usleep(1000);
-		if (p->eat_num >= g->must_eat_num && g->must_eat_num != -1)
+		if (p->eat_num >= g->must_eat_num && g->must_eat_num)
 			break ;
 	}
 	return (0);
@@ -105,7 +105,7 @@ void	execute(void *void_philo)
 	{
 		eat(game, philo);
 		if (philo->eat_num >= game->must_eat_num
-			&& game->must_eat_num != -1)
+			&& game->must_eat_num)
 			break ;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
