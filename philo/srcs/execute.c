@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 12:10:32 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 13:02:20 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	*execute(void *void_philo)
 	{
 		prepare_eat(game, philo);
 		if (game->must_eat_num && philo->eat_num >= game->must_eat_num)
-			break;
+			break ;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
 		put_philo(game, "is thinking", philo->id);

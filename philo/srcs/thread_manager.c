@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 12:10:57 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 13:02:10 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	put_dead(t_game *game, int philo_id)
 	printf("%lld", current_time() - game->start_time);
 	printf(" %d ", philo_id + 1);
 	printf("died\n");
+	game->is_died = TRUE;
 	pthread_mutex_unlock(&(game->m_print));
 }
 
@@ -29,24 +30,23 @@ void	check_death(t_game *game, t_philo *philo)
 	j = 0;
 	while (!game->eat_all)
 	{
-		i = 0;
-		while (i < game->philo_num)
+		i = -1;
+		while (++i < game->philo_num)
 		{
-			if (game->must_eat_num && philo[i].eat_num >= game->must_eat_num){
+			if (game->must_eat_num && philo[i].eat_num >= game->must_eat_num)
+			{
 				if (++j == game->philo_num)
+				{
 					game->eat_all = TRUE;
 					return ;
+				}
 			}
 			if (current_time() - philo[i].last_eat_time > game->die_time)
 			{
-				pthread_mutex_lock(&game->m_check_death);
 				put_dead(game, i);
-				game->is_died = TRUE;
-				pthread_mutex_unlock(&game->m_check_death);
 				return ;
 			}
 			usleep(1000);
-			i++;
 		}
 	}
 }
