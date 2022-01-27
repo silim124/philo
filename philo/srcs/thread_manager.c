@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:38:51 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 01:57:05 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 10:45:55 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	check_death(t_game *game, t_philo *philo)
 				pthread_mutex_unlock(&game->m_check_death);
 				return ;
 			}
-			usleep(100);
+			usleep(1000);
 			i++;
 		}
 		check_eat_all(game, philo);
