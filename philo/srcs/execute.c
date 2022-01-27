@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 11:45:09 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 12:10:32 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ void	eat(t_game *game, t_philo *philo)
 	philo->eat_num += 1;
 }
 
-int	prepare_eat(t_game *game, t_philo *philo)
+void	prepare_eat(t_game *game, t_philo *philo)
 {
-	if (game->eat_all)
-		return (0);
 	pthread_mutex_lock(&(game->m_fork[philo->left_fork_id]));
 	put_philo(game, "has taken a fork", philo->id);
 	pthread_mutex_lock(&(game->m_fork[philo->right_fork_id]));
@@ -33,7 +31,6 @@ int	prepare_eat(t_game *game, t_philo *philo)
 	eat(game, philo);
 	pthread_mutex_unlock(&(game->m_fork[philo->left_fork_id]));
 	pthread_mutex_unlock(&(game->m_fork[philo->right_fork_id]));
-	return (1);
 }
 
 void	*execute(void *void_philo)
@@ -45,10 +42,11 @@ void	*execute(void *void_philo)
 	game = philo->game;
 	if (philo->id % 2)
 		usleep(1500);
-	while (game->is_died == FALSE)
+	while (!game->is_died)
 	{
-		if (!prepare_eat(game, philo))
-			break ;
+		prepare_eat(game, philo);
+		if (game->must_eat_num && philo->eat_num >= game->must_eat_num)
+			break;
 		put_philo(game, "is sleeping", philo->id);
 		spend_time(game, SLEEP);
 		put_philo(game, "is thinking", philo->id);

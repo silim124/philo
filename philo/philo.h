@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:38:10 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 00:36:44 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 12:09:12 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,6 @@ void		check_death(t_game *game, t_philo *philo);
 */
 void		*execute(void *void_philo);
 void		eat(t_game *game, t_philo *philo);
-int			prepare_eat(t_game *game, t_philo *philo);
+void		prepare_eat(t_game *game, t_philo *philo);
 
 #endif
