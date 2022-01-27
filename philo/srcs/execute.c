@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:39:48 by silim             #+#    #+#             */
-/*   Updated: 2022/01/27 11:14:34 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 11:45:09 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	*execute(void *void_philo)
 	philo = (t_philo *)void_philo;
 	game = philo->game;
 	if (philo->id % 2)
-		usleep(15000);
+		usleep(1500);
 	while (game->is_died == FALSE)
 	{
 		if (!prepare_eat(game, philo))

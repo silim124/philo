@@ -6,7 +6,7 @@
 /*   By: silim <silim@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 18:22:59 by silim             #+#    #+#             */
-/*   Updated: 2021/12/22 01:23:40 by silim            ###   ########.fr       */
+/*   Updated: 2022/01/27 11:46:02 by silim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	spend_time(t_game *game, int status)
 	else if (status == SLEEP)
 		limit_time = (long long)game->sleep_time;
 	start_time = current_time();
-	while (game->is_died == 0)
+	while (game->is_died == FALSE)
 	{
 		if (diff_time(current_time(), start_time) >= limit_time)
 			break ;
