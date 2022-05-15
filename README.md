@@ -15,14 +15,14 @@ repo를 클론합니다
 ```c
  cd 42_philosophers/philo_one
  make
-./philo_x arg1 arg2 arg3 arg4 (arg5)philo
+./philo arg1 arg2 arg3 arg4 (arg5)philo
 ```
 <br>
-arg1은 철학자의 수입니다.  
-arg2는 죽을 시간(ms)입니다.  
-arg3은 식사 시간(ms)입니다.  
-arg4는 ms 단위의 절전 시간입니다.  
-arg5(선택 사항)는 각 철학자가 시뮬레이션을 종료하기 위해 먹어야 하는 시간입니다.  
+arg1은 철학자의 수입니다.  <br>
+arg2는 죽을 시간(ms)입니다.  <br>
+arg3은 식사 시간(ms)입니다.  <br>
+arg4는 ms 단위의 휴식 시간입니다.  <br>
+arg5(선택 사항)는 각 철학자가 시뮬레이션을 종료하기 위해 먹어야 하는 시간입니다.  <br>
 
 ### 참고
 - [유닉스 시스템 프로그래밍][1]
