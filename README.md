@@ -1,10 +1,10 @@
 # philo
 ## 개요
 철학자는 스레드가 C에서 어떻게 작동하는지 이해하고, 논리적 문제를 해결해보는 것입니다. 모든 철학자가 충분히 먹거나, 철학자가 한명이라도 죽으면 시뮬레이션이 중지됩니다.
-
-알고리즘에는 두 가지 버전이 있습니다.
-philo는 스레드와 뮤텍스에 관한 것입니다.
-philo_bonus는 프로세스와 세마포어에 관한 것입니다.
+<br><br>
+알고리즘에는 두 가지 버전이 있습니다.<br>
+philo는 스레드와 뮤텍스에 관한 것입니다.<br>
+philo_bonus는 프로세스와 세마포어에 관한 것입니다.<br>
 
 ## 프로젝트 빌드 및 실행
 repo를 클론합니다
@@ -31,5 +31,5 @@ arg5(선택 사항)는 각 철학자가 시뮬레이션을 종료하기 위해 �
 
 [1]: https://jihooyim1.gitbooks.io/unixbasic/content/contents/01.html
 [2]: https://heeonii.tistory.com/14
-[7]: https://stackoverflow.com/questions/16400820/how-to-use-posix-semaphores-on-forked-processes-in-c
+[3]: https://stackoverflow.com/questions/16400820/how-to-use-posix-semaphores-on-forked-processes-in-c
 
